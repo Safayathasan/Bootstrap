@@ -1,0 +1,61 @@
+        $alert-padding-y: 0.75rem;
+        $alert-padding-x: 1.25rem;
+        $alert-margin-bottom: 1rem;
+        $alert-border-radius: 0.25rem;
+        $alert-font-size: 1rem;
+        $alert-line-height: 1.5;
+        $alert-bg-opacity: 0.125;
+
+        /* Custom SCSS mixins */
+        @mixin alert-variant($color) {
+            color: $color;
+            background-color: rgba($color, $alert-bg-opacity);
+            border-color: $color;
+
+            &.alert-dismissible {
+                padding-right: 4rem; /* Add space for close button */
+            }
+        }
+
+        /* Custom SCSS classes */
+        .alert {
+            padding: $alert-padding-y $alert-padding-x;
+            margin-bottom: $alert-margin-bottom;
+            border: 1px solid transparent;
+            border-radius: $alert-border-radius;
+            font-size: $alert-font-size;
+            line-height: $alert-line-height;
+        }
+
+        /* Individual alert classes */
+        .alert-success {
+            @include alert-variant(#198754); /* Bootstrap success color */
+        }
+
+        .alert-info {
+            @include alert-variant(#0dcaf0); /* Bootstrap info color */
+        }
+
+        .alert-warning {
+            @include alert-variant(#ffc107); /* Bootstrap warning color */
+        }
+
+        .alert-danger {
+            @include alert-variant(#dc3545); /* Bootstrap danger color */
+        }
+
+        .alert-primary {
+            @include alert-variant(#0d6efd); /* Bootstrap primary color */
+        }
+
+        .alert-secondary {
+            @include alert-variant(#6c757d); /* Bootstrap secondary color */
+        }
+
+        .alert-dark {
+            @include alert-variant(#343a40); /* Bootstrap dark color */
+        }
+
+        .alert-light {
+            @include alert-variant(#f8f9fa); /* Bootstrap light color */
+        }
